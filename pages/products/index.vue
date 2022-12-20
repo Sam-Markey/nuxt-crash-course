@@ -1,11 +1,8 @@
-import { getData } from '../../helpers/get-data.helper';
 <template>
   <div>
     Products
     <div class="grid grid-cols-4 gap-5">
-      <div v-for="product in products">
-        <NuxtLink :to="`/products/${product.id}`">{{ product.title }}</NuxtLink>
-      </div>
+      <div v-for="product in products"><ProductCard :product="product" /></div>
     </div>
   </div>
 </template>
@@ -16,6 +13,9 @@ import { getData } from "~~/helpers/get-data.helper";
 
 definePageMeta({
   layout: "products",
+});
+useHead({
+  title: "Sams Products | All Products",
 });
 
 //fetch profucts

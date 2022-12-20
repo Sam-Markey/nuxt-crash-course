@@ -11,8 +11,12 @@
       quia neque.
     </p>
   </div>
+  <pre>{{ data }}</pre>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { data } = await useFetch("/api/currency/GBP");
+console.log(data.value);
+</script>
 
 <style scoped></style>
